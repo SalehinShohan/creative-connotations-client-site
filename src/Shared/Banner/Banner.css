@@ -1,0 +1,25 @@
+
+.all-buttons-container{
+    display: flex;
+    justify-content:space-between;
+    color: black;
+    align-items: center;
+    /* padding: 10px; */
+    background-color:white;
+    border-radius:5px;
+  }
+  .small-box{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin: 3px;
+    padding:3px;
+    width:100%;
+    margin: auto;
+    border-right: 2px solid rgb(107, 107, 107);
+    
+  }
+
+  
+ 
+  

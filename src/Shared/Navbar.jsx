@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import logo from '../assets/images/logo1.png'
 
 
 const NavBar = () => {
@@ -11,10 +12,10 @@ const NavBar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="">Our Menu</Link>
+        <Link to="">Instructors</Link>
       </li>
       <li>
-        <Link to="">Order Food</Link>
+        <Link to="">Classes</Link>
       </li>
       
     </>
@@ -46,7 +47,7 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Bistro Boss</a>
+          <Link> <img src={logo} alt="" /> </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
