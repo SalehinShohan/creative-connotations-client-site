@@ -25,7 +25,7 @@ const Classes = () => {
                 <img src={cls.img} alt="" className="rounded-xl w-96 h-80" />
               </figure>
               <p className="bg-slate-900 text-white absolute right-0 mr-11 mt-12 px-2 rounded-lg">
-                Price: {cls.price} BDT
+                {cls.price} BDT
               </p>
               <div className="card-body items-start text-center">
                 <h2 className="card-title text-white">
@@ -35,7 +35,7 @@ const Classes = () => {
                 <p>Available Seats: {cls.availableSeats}</p>
 
                 <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn btn-sm btn-accent">Select</button>
                 </div>
               </div>
             </div>
