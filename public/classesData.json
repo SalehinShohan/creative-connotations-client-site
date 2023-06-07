@@ -1,0 +1,23 @@
+[
+    {
+      "image": "https://www.shutterstock.com/image-vector/espanol-spanish-written-national-language-260nw-2037300224.jpg",
+      "name": "Beginner Spanish",
+      "instructor": "Maria Lopez",
+      "availableSeats": 10,
+      "price": 99.99
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY_eN7ZHKcSpf5GMnD2tJfaSmj3mw51pB5bxgkqFulYQ5zz3dqf26KLHadRy8rDgl61Bk&usqp=CAU",
+      "name": "Intermediate French",
+      "instructor": "Jean Dupont",
+      "availableSeats": 5,
+      "price": 149.99
+    },
+    {
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-b88768ccbb04a3b48ef17a4746ab38bc",
+      "name": "Advanced German",
+      "instructor": "Hans Schmidt",
+      "availableSeats": 8,
+      "price": 199.99
+    }
+  ]
