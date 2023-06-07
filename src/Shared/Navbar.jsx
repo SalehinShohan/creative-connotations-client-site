@@ -2,9 +2,11 @@
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import logo from '../assets/images/logo1.png'
+import useTitle from "../Hooks/useTitle";
 
 
 const NavBar = () => {
+  useTitle("Instructors")
   
   const navOptions = (
     <>
@@ -12,10 +14,10 @@ const NavBar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="">Instructors</Link>
+        <Link to="/instructors">Instructors</Link>
       </li>
       <li>
-        <Link to="">Classes</Link>
+        <Link to="/classes">Classes</Link>
       </li>
       
     </>
