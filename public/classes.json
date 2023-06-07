@@ -1,0 +1,38 @@
+[
+  {
+    "language": "Spanish",
+    "level": "Beginner",
+    "schedule": "Mondays and Wednesdays, 6:00 PM - 8:00 PM",
+    "instructor": "Maria Lopez",
+    "spotsAvailable": 5,
+    "studentsEnrolled": 12,
+    "img": "https://www.shutterstock.com/image-vector/espanol-spanish-written-national-language-260nw-2037300224.jpg"
+  },
+  {
+    "language": "French",
+    "level": "Intermediate",
+    "schedule": "Tuesdays and Thursdays, 7:00 PM - 9:00 PM",
+    "instructor": "Jean Baptiste",
+    "spotsAvailable": 3,
+    "studentsEnrolled": 8,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY_eN7ZHKcSpf5GMnD2tJfaSmj3mw51pB5bxgkqFulYQ5zz3dqf26KLHadRy8rDgl61Bk&usqp=CAU"
+  },
+  {
+    "language": "German",
+    "level": "Advanced",
+    "schedule": "Fridays, 5:00 PM - 7:00 PM",
+    "instructor": "Hans Müller",
+    "spotsAvailable": 2,
+    "studentsEnrolled": 4,
+    "img": "https://qph.cf2.quoracdn.net/main-qimg-b88768ccbb04a3b48ef17a4746ab38bc"
+  },
+  {
+    "language": "Japanese",
+    "level": "Beginner",
+    "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+    "instructor": "Yuki Tanaka",
+    "spotsAvailable": 7,
+    "studentsEnrolled": 10,
+    "img": "https://snrc.co.in/wp-content/uploads/2020/09/learn-Japanese-language.png"
+  }
+]
