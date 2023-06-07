@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Maria Lopez",
+    "language": "Spanish",
+    "bio": "Maria is a native Spanish speaker with over 10 years of experience teaching Spanish as a foreign language. She is passionate about helping students learn and enjoy the Spanish language and culture.",
+    "image": "https://www.shutterstock.com/shutterstock/photos/141309475/display_1500/stock-photo-an-with-glasses-teaching-spanish-subject-at-the-classroom-141309475.jpg"
+  },
+  {
+    "name": "Jean Baptiste",
+    "language": "French",
+    "bio": "Jean is a highly experienced French instructor with a deep understanding of French grammar and pronunciation. He enjoys creating engaging lessons that make learning French fun and interactive.",
+    "image": "https://images.practicaladultinsights.com/slideshow-mobile-small/smiling-female-teacher-with-long-hair-in-front-of-chalk-board.jpg"
+  },
+  {
+    "name": "Hans Müller",
+    "language": "German",
+    "bio": "Hans is a native German speaker and an enthusiastic instructor. He has a strong background in German literature and culture, and he enjoys sharing his knowledge and love for the German language with his students.",
+    "image": "https://media.licdn.com/dms/image/C4E03AQGuGh-pVCi-6w/profile-displayphoto-shrink_800_800/0/1654704059742?e=2147483647&v=beta&t=Mf0KmmscC5TWmHbD75rMyzPpJT6eJ00sS2hJYwzUl14"
+  },
+  {
+    "name": "Yuki Tanaka",
+    "language": "Japanese",
+    "bio": "Yuki is a dedicated Japanese instructor with extensive experience teaching Japanese to students of all levels. She has a deep understanding of Japanese grammar and cultural nuances, and she creates a supportive learning environment for her students.",
+    "image": "https://groups.oist.jp/sites/default/files/imce/u101792/DSCN0986.JPG"
+  }
+]
