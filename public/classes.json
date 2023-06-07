@@ -6,7 +6,8 @@
     "instructor": "Maria Lopez",
     "spotsAvailable": 5,
     "studentsEnrolled": 12,
-    "img": "https://www.shutterstock.com/image-vector/espanol-spanish-written-national-language-260nw-2037300224.jpg"
+    "img": "https://www.shutterstock.com/image-vector/espanol-spanish-written-national-language-260nw-2037300224.jpg",
+    "price": 150
   },
   {
     "language": "French",
@@ -15,7 +16,8 @@
     "instructor": "Jean Baptiste",
     "spotsAvailable": 3,
     "studentsEnrolled": 8,
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY_eN7ZHKcSpf5GMnD2tJfaSmj3mw51pB5bxgkqFulYQ5zz3dqf26KLHadRy8rDgl61Bk&usqp=CAU"
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY_eN7ZHKcSpf5GMnD2tJfaSmj3mw51pB5bxgkqFulYQ5zz3dqf26KLHadRy8rDgl61Bk&usqp=CAU",
+    "price": 100
   },
   {
     "language": "German",
@@ -24,7 +26,8 @@
     "instructor": "Hans Müller",
     "spotsAvailable": 2,
     "studentsEnrolled": 4,
-    "img": "https://qph.cf2.quoracdn.net/main-qimg-b88768ccbb04a3b48ef17a4746ab38bc"
+    "img": "https://qph.cf2.quoracdn.net/main-qimg-b88768ccbb04a3b48ef17a4746ab38bc",
+    "price": 200
   },
   {
     "language": "Japanese",
@@ -33,6 +36,7 @@
     "instructor": "Yuki Tanaka",
     "spotsAvailable": 7,
     "studentsEnrolled": 10,
-    "img": "https://snrc.co.in/wp-content/uploads/2020/09/learn-Japanese-language.png"
+    "img": "https://snrc.co.in/wp-content/uploads/2020/09/learn-Japanese-language.png",
+    "price": 300
   }
 ]

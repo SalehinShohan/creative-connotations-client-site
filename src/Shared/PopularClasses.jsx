@@ -4,7 +4,7 @@ import Container from "../components/Container";
 const PopularClasses = () => {
   const [classes, setClasses] = useState([]);
   useEffect(() => {
-    fetch("classes.json")
+    fetch("http://localhost:5000/class")
       .then((res) => res.json())
       .then((data) => {
         setClasses(data);
