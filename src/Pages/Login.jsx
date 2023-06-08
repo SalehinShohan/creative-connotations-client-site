@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../Provider/AuthProvider";
 import {FaGoogle  } from 'react-icons/fa';
 import toast from 'react-hot-toast'
 import Container from "../components/Container";
+import useTitle from "../Hooks/useTitle";
 
 
 const Login = () => {
+  useTitle("Login")
   const { signIn, googleSignIn, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();

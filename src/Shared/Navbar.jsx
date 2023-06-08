@@ -1,28 +1,59 @@
-
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Container from "../components/Container";
-import logo from '../assets/images/logo1.png'
+import logo from "../assets/images/logo1.png";
 import useTitle from "../Hooks/useTitle";
-
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const NavBar = () => {
-  useTitle("Instructors")
-  
+  useTitle("Instructors");
+
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const navOptions = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <Link to="/instructors">Instructors</Link>
+        <NavLink to="/instructors">Instructors</NavLink>
       </li>
       <li>
-        <Link to="/classes">Classes</Link>
+        <NavLink to="/classes">Classes</NavLink>
       </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-      
+
+      {user ? (
+        <>
+         
+            <Link
+              onClick={handleLogOut}
+              className="px-4 flex transition font-semibold cursor-pointer">
+              Logout
+            </Link>
+            {user && (
+              <div className="ml-2 tooltip tooltip-bottom" data-tip={user.displayName}>
+                <img
+                  className="w-8 h-8 rounded-lg"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </div>
+            )}
+         
+        </>
+      ) : (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>{" "}
+        </>
+      )}
     </>
   );
 
@@ -52,12 +83,14 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <Link> <img src={logo} alt="" /> </Link>
+          <Link>
+            {" "}
+            <img src={logo} alt="" />{" "}
+          </Link>
         </div>
         <div className="navbar-end font-semibold hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
-        
       </div>
     </Container>
   );
