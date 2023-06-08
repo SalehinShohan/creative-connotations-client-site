@@ -5,7 +5,6 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
-  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -17,11 +16,12 @@ import { app } from "../firebase/firebase.config";
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const googleProvider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -33,15 +33,10 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const signInWithGoogle = () => {
+  const googleSignIn = () =>{
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
-  };
-
-  const resetPassword = (email) => {
-    setLoading(true);
-    return sendPasswordResetEmail(auth, email);
-  };
+}
 
   const logOut = () => {
     setLoading(true);
@@ -59,7 +54,9 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log("current user", currentUser);
-      setLoading(false);
+     
+
+      
     });
     return () => {
       return unsubscribe();
@@ -72,8 +69,7 @@ const AuthProvider = ({ children }) => {
     setLoading,
     createUser,
     signIn,
-    signInWithGoogle,
-    resetPassword,
+    googleSignIn,
     logOut,
     updateUserProfile,
   };
