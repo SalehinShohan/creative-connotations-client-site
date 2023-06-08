@@ -6,10 +6,14 @@ import { MdPayment } from "react-icons/md";
 import { AiFillHome } from "react-icons/ai";
 import { SiGoogleclassroom } from "react-icons/si";
 import { GiTeacher } from "react-icons/gi";
+import { HiUserGroup } from "react-icons/hi";
 import useTitle from "../Hooks/useTitle";
 
 const Dashboard = () => {
-  useTitle('Dashboard')
+  useTitle("Dashboard");
+
+  const isAdmin = true;
+
   return (
     <Container>
       <div className="drawer lg:drawer-open">
@@ -26,37 +30,68 @@ const Dashboard = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-            {/* Sidebar content here */}
-            <li>
-              <NavLink to='/dashboard/myclass'>
-                <FaShoppingCart></FaShoppingCart>My Selected Classes
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/dashboard/enrollclass'>
-                <FcPaid></FcPaid>My Enrolled Classes
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/dashboard/history'>
-                <MdPayment></MdPayment>Payment History
-              </NavLink>
-            </li>
+            <div className="mb-16">
+              <h2 className="text-center tracking-widest text-orange-400 text-3xl font-bold uppercase">
+                Creative
+              </h2>
+              <p className="text-center text-orange-400 font-semibold text-xl uppercase tracking-widest">
+                Connotations
+              </p>
+            </div>
+
+            {isAdmin ? (
+              <>
+                <li className="text-white mb-5 text-2xl font-bold text-center">
+                  Admin Home
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageclass">
+                    <SiGoogleclassroom></SiGoogleclassroom>Manage Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageuser">
+                    <HiUserGroup></HiUserGroup>Manage Users
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+              <li className="text-white mb-5 text-2xl font-bold text-center">
+                  Student Home
+                </li>
+                <li>
+                  <NavLink to="/dashboard/myclass">
+                    <FaShoppingCart></FaShoppingCart>My Selected Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/enrollclass">
+                    <FcPaid></FcPaid>My Enrolled Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/history">
+                    <MdPayment></MdPayment>Payment History
+                  </NavLink>
+                </li>
+              </>
+            )}
 
             <div className="divider"></div>
 
             <li>
-              <NavLink to='/'>
+              <NavLink to="/">
                 <AiFillHome></AiFillHome>Home
               </NavLink>
             </li>
             <li>
-              <NavLink to='/classes'>
+              <NavLink to="/classes">
                 <SiGoogleclassroom></SiGoogleclassroom>Classes
               </NavLink>
             </li>
             <li>
-              <NavLink to='/instructors'>
+              <NavLink to="/instructors">
                 <GiTeacher></GiTeacher>Instructors
               </NavLink>
             </li>

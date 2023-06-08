@@ -10,6 +10,7 @@ import SignUp from "../Pages/SignUp";
 import Dashboard from "../Layout/Dashboard";
 import MyClass from "../Pages/Dashboard/MyClass";
 import PrivateRoute from "./PrivateRoute";
+import AllUsers from "../Pages/Dashboard/AllUsers";
 
   export const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ import PrivateRoute from "./PrivateRoute";
         {
           path: 'myclass',
           element: <MyClass></MyClass>
+        },
+        {
+          path: 'manageuser',
+          element: <AllUsers></AllUsers>
         }
       ]
     }
