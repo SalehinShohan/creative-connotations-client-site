@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Container from "../components/Container";
 import { FaShoppingCart } from "react-icons/fa";
 import { FcPaid } from "react-icons/fc";
@@ -6,8 +6,10 @@ import { MdPayment } from "react-icons/md";
 import { AiFillHome } from "react-icons/ai";
 import { SiGoogleclassroom } from "react-icons/si";
 import { GiTeacher } from "react-icons/gi";
+import useTitle from "../Hooks/useTitle";
 
 const Dashboard = () => {
+  useTitle('Dashboard')
   return (
     <Container>
       <div className="drawer lg:drawer-open">
@@ -26,38 +28,37 @@ const Dashboard = () => {
           <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
             <li>
-              <Link>
-                {" "}
+              <NavLink to='/dashboard/myclass'>
                 <FaShoppingCart></FaShoppingCart>My Selected Classes
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link>
+              <NavLink to='/dashboard/enrollclass'>
                 <FcPaid></FcPaid>My Enrolled Classes
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link>
+              <NavLink to='/dashboard/history'>
                 <MdPayment></MdPayment>Payment History
-              </Link>
+              </NavLink>
             </li>
 
             <div className="divider"></div>
 
             <li>
-              <Link to='/'>
+              <NavLink to='/'>
                 <AiFillHome></AiFillHome>Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to='/classes'>
+              <NavLink to='/classes'>
                 <SiGoogleclassroom></SiGoogleclassroom>Classes
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to='/instructors'>
+              <NavLink to='/instructors'>
                 <GiTeacher></GiTeacher>Instructors
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
