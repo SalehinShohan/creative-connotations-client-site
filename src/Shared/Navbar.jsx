@@ -4,6 +4,7 @@ import logo from "../assets/images/logo1.png";
 import useTitle from "../Hooks/useTitle";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaShoppingCart } from "react-icons/fa";
 
 const NavBar = () => {
   useTitle("Instructors");
@@ -27,25 +28,30 @@ const NavBar = () => {
       <li>
         <NavLink to="/classes">Classes</NavLink>
       </li>
+      <li>
+        <Link to="/">
+          {" "}
+          <button className="btn btn-xs">
+            <FaShoppingCart></FaShoppingCart>
+            <div className="badge badge-accent">+0</div>
+          </button>
+        </Link>
+      </li>
 
       {user ? (
         <>
-         
-            <Link
-              onClick={handleLogOut}
-              className="px-4 flex transition font-semibold cursor-pointer">
-              Logout
-            </Link>
-            {user && (
-              <div className="ml-2 tooltip tooltip-bottom" data-tip={user.displayName}>
-                <img
-                  className="w-8 h-8 rounded-lg"
-                  src={user.photoURL}
-                  alt=""
-                />
-              </div>
-            )}
-         
+          <Link
+            onClick={handleLogOut}
+            className="px-4 flex transition font-semibold cursor-pointer">
+            Logout
+          </Link>
+          {user && (
+            <div
+              className="ml-2 tooltip tooltip-bottom"
+              data-tip={user?.displayName}>
+              <img className="w-8 h-8 rounded-lg" src={user?.photoURL} alt="" />
+            </div>
+          )}
         </>
       ) : (
         <>
@@ -59,7 +65,7 @@ const NavBar = () => {
 
   return (
     <Container>
-      <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-2xl bg-black shadow-lg text-white">
+      <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-2xl h-10 bg-black shadow-lg text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

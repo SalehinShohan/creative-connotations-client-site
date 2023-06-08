@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import Container from "../components/Container";
-import useTitle from "../Hooks/useTitle";
+
 
 
 const SignUp = () => {
-    useTitle("SignUp")
   const {
     register,
     handleSubmit,
@@ -16,11 +15,7 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const { createUser, updateUserProfile } = useContext(AuthContext);
-
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     console.log(data);
@@ -48,7 +43,7 @@ const SignUp = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
-                navigate(from, { replace: true })
+                navigate("/");
               }
             });
         })
@@ -63,9 +58,9 @@ const SignUp = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           
           <div className="card flex-shrink-0 w-96 max-w-lg shadow-2xl bg-base-100">
-          <h1 className="text-4xl font-bold text-center mt-10">Login Now</h1>
+          <h1 className="text-4xl font-bold text-center mt-10">SignUp Now</h1>
             <p className="text-center mt-4">
-            Sign in to access your account
+            SignUp to access your account
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
@@ -77,7 +72,7 @@ const SignUp = () => {
                   {...register("name", { required: true })}
                   name="name"
                   required
-                placeholder='Enter Your Name'
+                placeholder='Enter Your Email'
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900'
                 />
                 {errors.name && (
@@ -117,7 +112,7 @@ const SignUp = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-white">Password</span>
+                  <span className="label-text">Password</span>
                 </label>
                 <input
                   type="password"
@@ -162,9 +157,9 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <p>
+            <p className="mb-4">
               <small>
-                Already have an account? <Link className="underline text-rose-400" to="/login">Login</Link>
+                Already have an account?<Link className="underline text-rose-400" to="/login">Login</Link>
               </small>
             </p>
            
