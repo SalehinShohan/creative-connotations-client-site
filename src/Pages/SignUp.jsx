@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import Container from "../components/Container";
-
-
+import { FaGoogle } from "react-icons/fa";
 
 const SignUp = () => {
   const {
@@ -14,8 +13,12 @@ const SignUp = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleSignIn, setLoading } =
+    useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     console.log(data);
@@ -51,17 +54,40 @@ const SignUp = () => {
     });
   };
 
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        const saveUser = {
+          name: loggedUser.displayName,
+          email: loggedUser.email,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate(from, { replace: true });
+          });
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err.message);
+      });
+  };
+
   return (
     <Container>
-      
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          
           <div className="card flex-shrink-0 w-96 max-w-lg shadow-2xl bg-base-100">
-          <h1 className="text-4xl font-bold text-center mt-10">SignUp Now</h1>
-            <p className="text-center mt-4">
-            SignUp to access your account
-            </p>
+            <h1 className="text-4xl font-bold text-center mt-10">SignUp Now</h1>
+            <p className="text-center mt-4">SignUp to access your account</p>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -72,8 +98,8 @@ const SignUp = () => {
                   {...register("name", { required: true })}
                   name="name"
                   required
-                placeholder='Enter Your Email'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900'
+                  placeholder="Enter Your Email"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900"
                 />
                 {errors.name && (
                   <span className="text-red-600">Name is required</span>
@@ -87,8 +113,8 @@ const SignUp = () => {
                   type="text"
                   {...register("photoURL", { required: true })}
                   required
-                placeholder='Photo URL'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900'
+                  placeholder="Photo URL"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900"
                 />
                 {errors.photoURL && (
                   <span className="text-red-600">Photo URL is required</span>
@@ -103,8 +129,8 @@ const SignUp = () => {
                   {...register("email", { required: true })}
                   name="email"
                   required
-                  placeholder='Enter Your Email Here'
-                  className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500  text-gray-900'
+                  placeholder="Enter Your Email Here"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500  text-gray-900"
                 />
                 {errors.email && (
                   <span className="text-red-600">Email is required</span>
@@ -123,8 +149,8 @@ const SignUp = () => {
                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                   })}
                   required
-                placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900'
+                  placeholder="*******"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900"
                 />
                 {errors.password?.type === "required" && (
                   <p className="text-red-600">Password is required</p>
@@ -156,13 +182,22 @@ const SignUp = () => {
                   value="Sign Up"
                 />
               </div>
+              <div
+                onClick={handleGoogleSignIn}
+                className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
+                <FaGoogle size={32} />
+
+                <p>Continue with Google</p>
+              </div>
             </form>
             <p className="mb-4">
               <small>
-                Already have an account?<Link className="underline text-rose-400" to="/login">Login</Link>
+                Already have an account?
+                <Link className="underline text-rose-400" to="/login">
+                  Login
+                </Link>
               </small>
             </p>
-           
           </div>
         </div>
       </div>
