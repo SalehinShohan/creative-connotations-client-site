@@ -1,11 +1,15 @@
 import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
-console.log(img_hosting_token)
+console.log(img_hosting_token);
 
 const AddClass = () => {
-  const { register, handleSubmit } = useForm();
+  const [axiosSecure] = useAxiosSecure();
+
+  const { register, handleSubmit, reset } = useForm();
 
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
@@ -21,15 +25,33 @@ const AddClass = () => {
       .then((result) => {
         console.log(result);
 
-        if(result.success){
-            const imgURL = result.data.display_url;
-            const {language, instructor, spotsAvailable, price, email} = data;
+        if (result.success) {
+          const imgURL = result.data.display_url;
+          const { language, instructor, spotsAvailable, price, email } = data;
 
-            const newClass = {language, instructor, spotsAvailable:parseFloat(spotsAvailable), img: imgURL, price:parseFloat(price), email}
-            console.log(newClass)
-            
+          const newClass = {
+            language,
+            instructor,
+            spotsAvailable: parseFloat(spotsAvailable),
+            img: imgURL,
+            price: parseFloat(price),
+            email,
+          };
+          console.log(newClass);
+          axiosSecure.post("/class", newClass).then((data) => {
+            console.log(data.data);
+            if (data.data.insertedId) {
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "New class added successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          });
         }
-
       });
 
     console.log(data);
@@ -57,7 +79,7 @@ const AddClass = () => {
           </label>
           <input
             type="text"
-            placeholder="Enter Class name"
+            placeholder="Enter Instructor name"
             {...register("instructor", { required: true })}
             className="input input-bordered w-full max-w-lg"
           />
@@ -68,7 +90,7 @@ const AddClass = () => {
           </label>
           <input
             type="email"
-            placeholder="Enter Class name"
+            placeholder="Enter Instructor Email"
             {...register("email", { required: true })}
             className="input input-bordered w-full max-w-lg"
           />
@@ -79,7 +101,7 @@ const AddClass = () => {
           </label>
           <input
             type="number"
-            placeholder="Enter Class name"
+            placeholder="Available seats"
             {...register("spotsAvailable", { required: true })}
             className="input input-bordered w-full max-w-lg"
           />
@@ -90,7 +112,7 @@ const AddClass = () => {
           </label>
           <input
             type="number"
-            placeholder="Enter Class name"
+            placeholder="Enter Class Price"
             {...register("price", { required: true })}
             className="input input-bordered w-full max-w-lg"
           />

@@ -67,7 +67,7 @@ const AllClasses = ({ cls }) => {
             <h2 className="card-title text-white">Course: {language}</h2>
             <p>Instructor: {instructor}</p>
             <p>Available Seats: {spotsAvailable}</p>
-            <p>Enrolled: {studentsEnrolled}</p>
+            <p>Enrolled: {studentsEnrolled ? cls.studentsEnrolled : 0}</p>
 
             <div className="card-actions">
               <button
