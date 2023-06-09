@@ -69,7 +69,7 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/myclasses">
+                  <NavLink to="/dashboard/instructorclass">
                     <FcPaid></FcPaid>My Classes
                   </NavLink>
                 </li>
