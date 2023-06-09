@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 
 const AllClasses = ({ cls }) => {
-  const { img, language, instructor, availableSeats, price, _id } = cls;
+  const { img, language, instructor, spotsAvailable, price,studentsEnrolled, _id } = cls;
   const { user } = useContext(AuthContext);
   const [, refetch] = useCart();
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const AllClasses = ({ cls }) => {
   const handleAddToCart = (cls) => {
     console.log(cls);
     if (user && user.email) {
-        const orderClass = {classId: _id, language, img, price, availableSeats, instructor, email: user.email}
+        const orderClass = {classId: _id, language, img, price, spotsAvailable,studentsEnrolled, instructor, email: user.email}
       fetch("http://localhost:5000/carts", {
         method: 'POST',
         headers: {
@@ -66,7 +66,8 @@ const AllClasses = ({ cls }) => {
           <div className="card-body items-start text-center">
             <h2 className="card-title text-white">Course: {language}</h2>
             <p>Instructor: {instructor}</p>
-            <p>Available Seats: {availableSeats}</p>
+            <p>Available Seats: {spotsAvailable}</p>
+            <p>Enrolled: {studentsEnrolled}</p>
 
             <div className="card-actions">
               <button
