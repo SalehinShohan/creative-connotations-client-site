@@ -8,11 +8,14 @@ import { SiGoogleclassroom } from "react-icons/si";
 import { GiTeacher } from "react-icons/gi";
 import { HiUserGroup } from "react-icons/hi";
 import useTitle from "../Hooks/useTitle";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
   useTitle("Dashboard");
 
-  const isAdmin = true;
+  // const isAdmin = true;
+
+  const [isAdmin] = useAdmin();
 
   return (
     <Container>
