@@ -9,6 +9,7 @@ import { GiTeacher } from "react-icons/gi";
 import { HiUserGroup } from "react-icons/hi";
 import useTitle from "../Hooks/useTitle";
 import useAdmin from "../Hooks/useAdmin";
+import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
   useTitle("Dashboard");
@@ -16,6 +17,7 @@ const Dashboard = () => {
   // const isAdmin = true;
 
   const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <Container>
@@ -58,9 +60,25 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </>
+            ) : isInstructor ? (
+              <>
+                <li className="text-white mb-5 text-2xl font-bold text-center">
+                Instructor Home
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addclass">
+                    <FaShoppingCart></FaShoppingCart>Add Class
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/myclasses">
+                    <FcPaid></FcPaid>My Classes
+                  </NavLink>
+                </li>
+              </>
             ) : (
               <>
-              <li className="text-white mb-5 text-2xl font-bold text-center">
+                <li className="text-white mb-5 text-2xl font-bold text-center">
                   Student Home
                 </li>
                 <li>
