@@ -14,8 +14,6 @@ import useInstructor from "../Hooks/useInstructor";
 const Dashboard = () => {
   useTitle("Dashboard");
 
-  // const isAdmin = true;
-
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
 
