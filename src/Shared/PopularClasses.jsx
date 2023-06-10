@@ -7,7 +7,8 @@ const PopularClasses = () => {
     fetch("http://localhost:5000/class")
       .then((res) => res.json())
       .then((data) => {
-        setClasses(data);
+        const polularclasses = data.filter(items => items.studentsEnrolled > 0)
+        setClasses(polularclasses);
       });
   }, []);
   return (
