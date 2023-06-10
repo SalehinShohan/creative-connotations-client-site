@@ -19,7 +19,7 @@ const PaymentHistoyr = () => {
               <th>#</th>
               <th>Email</th>
               <th>Transaction Id</th>
-              <th>Price</th>
+              <th>Pay</th>
               <th>Date</th>
             </tr>
           </thead>

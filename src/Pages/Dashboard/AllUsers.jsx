@@ -6,7 +6,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const AllUsers = () => {
   useTitle("Manage Users");
 
-  const[axiosSecure] = useAxiosSecure();
+  const [axiosSecure] = useAxiosSecure();
 
   const { data: users = [], refetch } = useQuery(["users"], async () => {
     const res = await axiosSecure.get("/users");
@@ -50,7 +50,6 @@ const AllUsers = () => {
         }
       });
   };
-
 
   return (
     <div className="w-full lg:ml-16">

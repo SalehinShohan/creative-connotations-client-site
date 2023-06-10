@@ -8,21 +8,22 @@ const Instructors = () => {
   const [instData, setInstData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/instructor")
+    fetch("http://localhost:5000/users")
       .then((res) => res.json())
       .then((data) => {
-        setInstData(data);
+        const polularclasses = data.filter(items => items.role === 'instructor')
+        setInstData(polularclasses);
       });
   }, []);
   return (
-    <Container>
+    <Container className="mt-10">
       <div className="p-24">
         {instData.map((data) => (
           <div key={data.name}>
             <div className="card card-side bg-base-100 shadow-xl">
               <figure>
                 <img className="w-60 rounded-xl"
-                  src={data.image}
+                  src={data.img}
                   alt=""
                 />
               </figure>

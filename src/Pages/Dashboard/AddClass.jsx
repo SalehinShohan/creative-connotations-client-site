@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
-console.log(img_hosting_token);
+// console.log(img_hosting_token);
 
 const AddClass = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -36,7 +36,8 @@ const AddClass = () => {
             img: imgURL,
             price: parseFloat(price),
             email,
-            status: 'pending'
+            status: 'pending',
+            studentsEnrolled: 0
           };
           console.log(newClass);
           axiosSecure.post("/class", newClass).then((data) => {

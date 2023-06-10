@@ -12,7 +12,8 @@ const Classes = () => {
     fetch("http://localhost:5000/class")
       .then((res) => res.json())
       .then((data) => {
-        setClassData(data);
+        const approvedClass = data.filter(items => items.status === 'approved')
+        setClassData(approvedClass);
       });
   }, []);
 
