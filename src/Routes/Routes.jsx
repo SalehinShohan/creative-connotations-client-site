@@ -13,10 +13,10 @@ import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../Pages/Dashboard/AllUsers";
 import AddClass from "../Pages/Dashboard/AddClass";
 import InstructorClass from "../Pages/Dashboard/InstructorClass";
-import AdminMangeClass from "../Pages/Dashboard/AdminMangeClass";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistoyr from "../Pages/Dashboard/PaymentHistoyr";
 import EnrolledClass from "../Pages/Dashboard/EnrolledClass";
+import AdminMangeClass from "../Pages/Dashboard/AdminManageClass/AdminMangeClass";
 
 
   export const router = createBrowserRouter([

@@ -11,6 +11,7 @@ const EnrolledClass = () => {
   });
     return (
         <div className="w-full lg:ml-16">
+          <h2 className="text-center text-3xl  mb-16 font-serif font-bold">Enrolled Classes</h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           {/* head */}

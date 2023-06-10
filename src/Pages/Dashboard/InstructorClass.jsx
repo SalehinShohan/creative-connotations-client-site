@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 
+
 const InstructorClass = () => {
+
   const { data: classes = []} = useQuery({
     queryKey: ["class"],
     queryFn: async () => {
@@ -8,6 +10,8 @@ const InstructorClass = () => {
       return res.json();
     },
   });
+
+  
 
   return (
     <div className="w-full p-16">
@@ -44,7 +48,10 @@ const InstructorClass = () => {
                 </td>
                 <td>{cls.language}</td>
                 <td>{cls.price} BDT</td>
-                <td>Pending</td>
+                <td>
+                {cls.status}
+
+                </td>
                 <td>
                   <button className="btn btn-ghost btn-xs">Delete</button>
                 </td>

@@ -36,6 +36,7 @@ const AddClass = () => {
             img: imgURL,
             price: parseFloat(price),
             email,
+            status: 'pending'
           };
           console.log(newClass);
           axiosSecure.post("/class", newClass).then((data) => {
