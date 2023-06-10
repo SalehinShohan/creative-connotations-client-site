@@ -2,6 +2,8 @@ import Swal from "sweetalert2";
 import useCart from "../../Hooks/useCart";
 import useTitle from "../../Hooks/useTitle";
 import { AiFillDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
+
 
 const MyClass = () => {
   useTitle("My Classes");
@@ -46,7 +48,6 @@ const MyClass = () => {
       <div className="font-semibold text-2xl text-white flex justify-evenly mb-10">
         <h2>Total Classes: {cart.length}</h2>
         <h2>Total Price: {total} BDT</h2>
-        <button className="btn btn-sm btn-success">PAY</button>
       </div>
 
       <div className="overflow-x-auto">
@@ -58,6 +59,7 @@ const MyClass = () => {
               <th>Course</th>
               <th>Course Name</th>
               <th>Price</th>
+              <th>Payment</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -74,6 +76,7 @@ const MyClass = () => {
                 </td>
                 <td>{row.language}</td>
                 <td>{row.price} BDT</td>
+                <td><Link to='/dashboard/pay'><button className="btn btn-sm btn-success">PAY</button></Link></td>
                 <td>
                   <button 
                   onClick={() => handleDelete(row)} 
