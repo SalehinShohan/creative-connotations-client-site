@@ -73,7 +73,7 @@ const AllUsers = () => {
                 <td>{user.email}</td>
                 <td>
                   {" "}
-                  {user.role === "admin" ? (
+                  {user?.role === "admin" ? (
                     "admin"
                   ) : (
                     <button
@@ -85,7 +85,7 @@ const AllUsers = () => {
                 </td>
 
                 <td>
-                  {user.role === "instructor" ? (
+                  {user?.role === "instructor" ? (
                     "instructor"
                   ) : (
                     <button

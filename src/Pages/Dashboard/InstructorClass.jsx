@@ -1,13 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-// import useCart from "../../Hooks/useCart";
 import { AiFillDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 import UpdateClass from "./UpdateClass";
 
 const InstructorClass = () => {
-  // const [, refetch] = useCart();
-  // const [control, setControl] = useState(false);
-  // const [toys, setToys] = useState([]);
 
   const {refetch, data: classes = [] } = useQuery({
     queryKey: ["class"],

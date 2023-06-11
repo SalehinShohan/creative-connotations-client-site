@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
-const CheckoutForm = ({ cart, price }) => {
+const CheckoutForm = ({ cart, price, id }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useContext(AuthContext);
@@ -14,6 +14,8 @@ const CheckoutForm = ({ cart, price }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
+
+  
 
   useEffect(() => {
     if (price > 0) {
@@ -75,6 +77,7 @@ const CheckoutForm = ({ cart, price }) => {
         price,
         date: new Date(),
         quantity: cart.length,
+        classId: id,
         cartItems: cart.map((item) => item._id),
         menuItems: cart.map((item) => item.menuItemId),
         status: "service pending",

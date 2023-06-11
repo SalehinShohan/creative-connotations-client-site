@@ -71,7 +71,7 @@ const MyClass = () => {
                 </td>
                 <td>{row.language}</td>
                 <td>{row.price} BDT</td>
-                <td><Link to='/dashboard/pay'><button className="btn btn-sm btn-success">PAY</button></Link></td>
+                <td><Link to={`/dashboard/pay/${row.classId}`}><button className="btn btn-sm btn-success">PAY</button></Link></td>
                 <td>
                   <button
                     onClick={() => handleDelete(row)}

@@ -72,7 +72,7 @@ import AdminRoute from "./AdminRoute";
           element: <AdminRoute><AdminMangeClass></AdminMangeClass></AdminRoute>
         },
         {
-          path: 'pay',
+          path: 'pay/:id',
           element: <Payment></Payment>
         },
         {

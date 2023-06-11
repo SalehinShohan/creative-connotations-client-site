@@ -52,16 +52,7 @@ const UpdateClass = (props) => {
                 defaultValue={props?.cls?.spotsAvailable}
               />
             </div>
-            <div>
-              <h1 className="text-start text-3xl text-accent mb-2 lg:ml-40">Enrolled:</h1>
-              <input
-                className="w-1/2 h-14 rounded-xl p-2 mb-4 input-accent"
-                {...register("studentsEnrolled")}
-                placeholder="Students Enrolled"
-                type="number"
-                defaultValue={props?.cls?.studentsEnrolled}
-              />
-            </div>
+            
 
             <div className="w-full mt-4">
               <button className="btn btn-outline btn-success">
