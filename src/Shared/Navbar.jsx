@@ -4,14 +4,14 @@ import logo from "../assets/images/logo1.png";
 import useTitle from "../Hooks/useTitle";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { FaShoppingCart } from "react-icons/fa";
-import useCart from "../Hooks/useCart";
+
+
 
 const NavBar = () => {
   useTitle("Instructors");
 
   const { user, logOut } = useContext(AuthContext);
-  const [cart] = useCart()
+
 
   const handleLogOut = () => {
     logOut()
@@ -31,11 +31,11 @@ const NavBar = () => {
         <NavLink to="/classes">Classes</NavLink>
       </li>
       <li>
-        <Link to="/dashboard/myclass">
-          {" "}
+        <Link to="/dashboard">
+          
           <button className="btn btn-xs">
-            <FaShoppingCart></FaShoppingCart>
-            <div className="badge badge-accent">+{cart?.length || 0}</div>
+            Dashboard
+          
           </button>
         </Link>
       </li>

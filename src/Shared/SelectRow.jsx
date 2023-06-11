@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../Hooks/useCart";
 
-const AllClasses = ({ cls }) => {
+const SelectRow = ({ cls }) => {
   const { img, language, instructor, spotsAvailable, price,studentsEnrolled, _id } = cls;
   const { user } = useContext(AuthContext);
   const [, refetch] = useCart();
@@ -85,4 +85,4 @@ const AllClasses = ({ cls }) => {
   );
 };
 
-export default AllClasses;
+export default SelectRow;
