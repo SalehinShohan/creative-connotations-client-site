@@ -89,7 +89,7 @@ const Login = () => {
                   name="email"
                   required
                   placeholder='Enter Your Email Here'
-                  className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500  text-gray-900'
+                  className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500'
                 />
               </div>
               <div className="form-control">
@@ -101,7 +101,7 @@ const Login = () => {
                   name="password"
                   required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500'
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
