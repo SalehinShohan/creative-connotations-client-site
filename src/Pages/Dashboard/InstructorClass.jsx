@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import useCart from "../../Hooks/useCart";
+// import useCart from "../../Hooks/useCart";
 import { AiFillDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 import UpdateClass from "./UpdateClass";
 
 const InstructorClass = () => {
-  const [, refetch] = useCart();
+  // const [, refetch] = useCart();
   // const [control, setControl] = useState(false);
   // const [toys, setToys] = useState([]);
 
-  const { data: classes = [] } = useQuery({
+  const {refetch, data: classes = [] } = useQuery({
     queryKey: ["class"],
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/class");
@@ -35,7 +35,7 @@ const InstructorClass = () => {
           .then(res => res.json())
           .then(data => {
             if(data.deletedCount > 0){
-                refetch();
+               refetch();
                 Swal.fire(
                     'Deleted!',
                     'Your file has been deleted.',

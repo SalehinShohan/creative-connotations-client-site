@@ -4,51 +4,45 @@ import useTitle from "../../Hooks/useTitle";
 import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-
 const MyClass = () => {
   useTitle("My Classes");
   const [cart, refetch] = useCart();
 
-  const total = cart.reduce((sum, item) => item.price + sum, 0);
+  const total = cart.reduce((sum, item) => parseFloat(item.price) + sum, 0);
 
-    const handleDelete = (row) => {
-        
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              fetch(`http://localhost:5000/carts/${row._id}`, {
-                method: 'DELETE',
-              })
-              .then(res => res.json())
-              .then(data => {
-                if(data.deletedCount > 0){
-                    refetch();
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                      )
-                }
-              })
+  const handleDelete = (row) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${row._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              refetch();
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
             }
-          })
-
-    }
-
+          });
+      }
+    });
+  };
 
   return (
     <div className="w-10/12">
       <div className="font-semibold text-2xl text-white flex justify-evenly mb-10">
         <h2>Total Classes: {cart.length}</h2>
         <h2>Total Price: {total} BDT</h2>
-        <Link to='/dashboard/pay'><button className="btn btn-sm btn-success">PAY</button></Link>
+        {/* <Link to="/dashboard/pay">
+          <button className="btn btn-sm btn-success">PAY</button>
+        </Link> */}
       </div>
 
       <div className="overflow-x-auto">
@@ -60,7 +54,7 @@ const MyClass = () => {
               <th>Course</th>
               <th>Course Name</th>
               <th>Price</th>
-              {/* <th>Payment</th> */}
+              <th>Payment</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -77,11 +71,11 @@ const MyClass = () => {
                 </td>
                 <td>{row.language}</td>
                 <td>{row.price} BDT</td>
-                {/* <td><Link to='/dashboard/pay'><button className="btn btn-sm btn-success">PAY</button></Link></td> */}
+                <td><Link to='/dashboard/pay'><button className="btn btn-sm btn-success">PAY</button></Link></td>
                 <td>
-                  <button 
-                  onClick={() => handleDelete(row)} 
-                  className="btn btn-ghost btn-sm text-white bg-red-500">
+                  <button
+                    onClick={() => handleDelete(row)}
+                    className="btn btn-ghost btn-sm text-white bg-red-500">
                     <AiFillDelete></AiFillDelete>
                   </button>
                 </td>
