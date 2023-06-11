@@ -5,25 +5,42 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../Hooks/useCart";
+import Container from "../components/Container";
 
 const SelectRow = ({ cls }) => {
-  const { img, language, instructor, spotsAvailable, price,studentsEnrolled, _id } = cls;
+  const {
+    img,
+    language,
+    instructor,
+    spotsAvailable,
+    price,
+    studentsEnrolled,
+    _id,
+  } = cls;
   const { user } = useContext(AuthContext);
   const [, refetch] = useCart();
   const navigate = useNavigate();
   const location = useLocation();
 
-
   const handleAddToCart = (cls) => {
     console.log(cls);
     if (user && user.email) {
-        const orderClass = {classId: _id, language, img, price, spotsAvailable,studentsEnrolled, instructor, email: user.email}
+      const orderClass = {
+        classId: _id,
+        language,
+        img,
+        price,
+        spotsAvailable,
+        studentsEnrolled,
+        instructor,
+        email: user.email,
+      };
       fetch("http://localhost:5000/carts", {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'content-type': 'application/json'
+          "content-type": "application/json",
         },
-        body: JSON.stringify(orderClass)
+        body: JSON.stringify(orderClass),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -48,16 +65,15 @@ const SelectRow = ({ cls }) => {
         confirmButtonText: "Login Now!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate('/login', {state: {from: location}});
+          navigate("/login", { state: { from: location } });
         }
       });
     }
   };
 
-  
   return (
-    <div>
-      <div>
+    
+      <Container>
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
             <img src={img} alt="" className="rounded-xl w-96 h-80" />
@@ -80,8 +96,8 @@ const SelectRow = ({ cls }) => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    
   );
 };
 

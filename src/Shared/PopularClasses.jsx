@@ -19,14 +19,18 @@ const PopularClasses = () => {
       });
   }, []);
 
-
   return (
     <Container>
-      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 p-24">
-        {classData.map((cls) => <SelectRow
-          key={cls._id}
-          cls={cls}
-        ></SelectRow> )}
+      <div>
+        <h2 className="text-3xl text-center font-serif font-bold mt-24">
+          Our Popular Classes
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 mt-10 mb-20">
+        {classData.map((cls) => (
+          <SelectRow key={cls._id} cls={cls}></SelectRow>
+        ))}
       </div>
     </Container>
   );
