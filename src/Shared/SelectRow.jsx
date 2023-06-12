@@ -35,7 +35,7 @@ const SelectRow = ({ cls }) => {
         instructor,
         email: user.email,
       };
-      fetch("http://localhost:5000/carts", {
+      fetch("https://creative-connotations-server-site.vercel.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

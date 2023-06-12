@@ -10,7 +10,7 @@ const AdminMangeClass = () => {
   const { data: classes = []} = useQuery({
     queryKey: ["class"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/class");
+      const res = await fetch("https://creative-connotations-server-site.vercel.app/class");
       return res.json();
     },
   });

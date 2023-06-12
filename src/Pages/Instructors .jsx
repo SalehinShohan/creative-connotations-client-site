@@ -8,7 +8,7 @@ const Instructors = () => {
   const [instData, setInstData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://creative-connotations-server-site.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         const polularclasses = data.filter(items => items.role === 'instructor')

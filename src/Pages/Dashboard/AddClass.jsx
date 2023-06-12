@@ -13,14 +13,14 @@ const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
 const AddClass = () => {
   //instructorImage
-//http://localhost:5000/instructorImage
+//https://creative-connotations-server-site.vercel.app/instructorImage
 
   const {user} = useContext(AuthContext);
   // console.log(user)
   const [images, setImages] = useState({});
 
   useEffect( () => {
-    fetch(`http://localhost:5000/instructorImage?email=${user?.email}`)
+    fetch(`https://creative-connotations-server-site.vercel.app/instructorImage?email=${user?.email}`)
     .then(res => res.json())
     .then(data => {
       setImages(data.img)

@@ -44,7 +44,7 @@ const SignUp = () => {
             email: data.email,
             img: data.photoURL,
           };
-          fetch("http://localhost:5000/users", {
+          fetch("https://creative-connotations-server-site.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -79,7 +79,7 @@ const SignUp = () => {
           name: loggedUser.displayName,
           email: loggedUser.email,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://creative-connotations-server-site.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

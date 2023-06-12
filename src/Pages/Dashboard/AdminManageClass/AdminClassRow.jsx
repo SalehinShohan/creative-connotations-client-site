@@ -7,7 +7,7 @@ const AdminClassRow = ({ cls, index }) => {
   const [, refetch] = useCart();
 
   const handleApprove = (id) => {
-    fetch(`http://localhost:5000/approveClass/${id}`, {
+    fetch(`https://creative-connotations-server-site.vercel.app/approveClass/${id}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,
@@ -20,7 +20,7 @@ const AdminClassRow = ({ cls, index }) => {
       });
   };
   const handleDeny = (id) => {
-    fetch(`http://localhost:5000/denyClass/${id}`, {
+    fetch(`https://creative-connotations-server-site.vercel.app/denyClass/${id}`, {
       method: "PATCH",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,
@@ -34,7 +34,7 @@ const AdminClassRow = ({ cls, index }) => {
   };
 
   const handleFeedback = (id) => {
-    fetch(`http://localhost:5000/feedback/${id}`, {
+    fetch(`https://creative-connotations-server-site.vercel.app/feedback/${id}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,

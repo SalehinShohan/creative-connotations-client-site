@@ -17,7 +17,7 @@ const AllClasses = ({ cls }) => {
     console.log(cls);
     if (user && user.email) {
         const orderClass = {classId: _id, language, img, price, spotsAvailable,studentsEnrolled, instructor, email: user.email}
-      fetch("http://localhost:5000/carts", {
+      fetch("https://creative-connotations-server-site.vercel.app/carts", {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

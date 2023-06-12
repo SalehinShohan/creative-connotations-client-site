@@ -9,7 +9,7 @@ const InstructorClass = () => {
   const {refetch, data: classes = [] } = useQuery({
     queryKey: ["class"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/class");
+      const res = await fetch("https://creative-connotations-server-site.vercel.app/class");
       return res.json();
     },
   });
@@ -26,7 +26,7 @@ const InstructorClass = () => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/deleteClass/${id._id}`, {
+          fetch(`https://creative-connotations-server-site.vercel.app/deleteClass/${id._id}`, {
             method: 'DELETE',
           })
           .then(res => res.json())
@@ -54,7 +54,7 @@ const InstructorClass = () => {
       confirmButtonText: "OK",
     });
 
-    fetch(`http://localhost:5000/updateClass/${data?._id}`, {
+    fetch(`https://creative-connotations-server-site.vercel.app/updateClass/${data?._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
