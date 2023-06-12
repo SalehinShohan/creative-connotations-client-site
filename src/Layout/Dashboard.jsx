@@ -44,43 +44,63 @@ const Dashboard = () => {
 
             {isAdmin ? (
               <>
-                <li className="text-white mb-5 text-2xl font-bold text-center">
+                <li className=" mb-5 text-2xl font-bold text-center">
                   Admin Home
                 </li>
                 <li>
-                  <NavLink to="/dashboard/manageclass">
+                  <NavLink
+                  className={({ isActive }) =>
+                  isActive ? "text-success" : "default"
+                }
+                  to="/dashboard/manageclass">
                     <SiGoogleclassroom></SiGoogleclassroom>Manage Classes
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/manageuser">
+                  <NavLink
+                    className={({ isActive }) =>
+                    isActive ? "text-success" : "default"
+                  }
+                  to="/dashboard/manageuser">
                     <HiUserGroup></HiUserGroup>Manage Users
                   </NavLink>
                 </li>
               </>
             ) : isInstructor ? (
               <>
-                <li className="text-white mb-5 text-2xl font-bold text-center">
+                <li className=" mb-5 text-2xl font-bold text-center">
                 Instructor Home
                 </li>
                 <li>
-                  <NavLink to="/dashboard/addclass">
+                  <NavLink
+                    className={({ isActive }) =>
+                    isActive ? "text-success" : "default"
+                  }
+                  to="/dashboard/addclass">
                     <FaShoppingCart></FaShoppingCart>Add Class
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/instructorclass">
+                  <NavLink
+                  className={({ isActive }) =>
+                  isActive ? "text-success" : "default"
+                }
+                  to="/dashboard/instructorclass">
                     <FcPaid></FcPaid>My Classes
                   </NavLink>
                 </li>
               </>
             ) : (
               <>
-                <li className="text-white mb-5 text-2xl font-bold text-center">
+                <li className=" mb-5 text-2xl font-bold text-center">
                   Student Home
                 </li>
                 <li>
-                  <NavLink to="/dashboard/myclass">
+                  <NavLink
+                  className={({ isActive }) =>
+                  isActive ? "text-success" : "default"
+                }
+                  to="/dashboard/myclass">
                     <FaShoppingCart></FaShoppingCart>My Selected Classes
                   </NavLink>
                 </li>
@@ -90,7 +110,11 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/history">
+                  <NavLink
+                  className={({ isActive }) =>
+                  isActive ? "text-success" : "default"
+                }
+                  to="/dashboard/history">
                     <MdPayment></MdPayment>Payment History
                   </NavLink>
                 </li>
@@ -100,17 +124,29 @@ const Dashboard = () => {
             <div className="divider"></div>
 
             <li>
-              <NavLink to="/">
+              <NavLink
+              className={({ isActive }) =>
+              isActive ? "text-success" : "default"
+            }
+              to="/">
                 <AiFillHome></AiFillHome>Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/classes">
+              <NavLink
+              className={({ isActive }) =>
+              isActive ? "text-success" : "default"
+            }
+              to="/classes">
                 <SiGoogleclassroom></SiGoogleclassroom>Classes
               </NavLink>
             </li>
             <li>
-              <NavLink to="/instructors">
+              <NavLink
+              className={({ isActive }) =>
+              isActive ? "text-success" : "default"
+            }
+              to="/instructors">
                 <GiTeacher></GiTeacher>Instructors
               </NavLink>
             </li>

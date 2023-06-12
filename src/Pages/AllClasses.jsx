@@ -60,11 +60,11 @@ const AllClasses = ({ cls }) => {
           <figure className="px-10 pt-10">
             <img src={img} alt="" className="rounded-xl w-96 h-80" />
           </figure>
-          <p className="bg-slate-900 text-white absolute right-0 mr-11 mt-12 px-2 rounded-lg">
+          <p className="bg-slate-900  absolute right-0 mr-11 mt-12 px-2 rounded-lg">
             {price} BDT
           </p>
           <div className="card-body items-start text-center">
-            <h2 className="card-title text-white">Course: {language}</h2>
+            <h2 className="card-title ">Course: {language}</h2>
             <p>Instructor: {instructor}</p>
             <p>Available Seats: {spotsAvailable}</p>
             <p>Price: {price}</p>

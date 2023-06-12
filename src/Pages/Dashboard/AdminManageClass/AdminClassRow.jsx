@@ -51,13 +51,13 @@ const AdminClassRow = ({ cls, index }) => {
         <button
           disabled={cls?.status !== "pending"}
           onClick={() => handleApprove(cls?._id)}
-          className="btn bg-red-500 text-white btn-xs">
+          className="btn bg-red-500  btn-xs">
           Approve
         </button>
         <button
           disabled={cls?.status !== "pending"}
           onClick={() => handleDeny(cls?._id)}
-          className="btn bg-red-500 text-white btn-xs">
+          className="btn bg-red-500  btn-xs">
           Deny
         </button>
       </td>

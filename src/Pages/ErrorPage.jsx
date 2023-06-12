@@ -13,7 +13,7 @@ const ErrorPage = () => {
           alt=""
         />
         <div className="max-w-md text-center">
-          <p className="text-2xl text-white font-semibold md:text-3xl mb-8">
+          <p className="text-2xl  font-semibold md:text-3xl mb-8">
             {error?.message}
           </p>
           <Link

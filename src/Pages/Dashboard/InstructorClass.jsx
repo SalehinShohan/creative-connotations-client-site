@@ -110,7 +110,7 @@ const InstructorClass = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(cls)}
-                    className="btn btn-ghost btn-sm text-white bg-red-500">
+                    className="btn btn-ghost btn-sm  bg-red-500">
                     <AiFillDelete></AiFillDelete>
                   </button>
                 </td>

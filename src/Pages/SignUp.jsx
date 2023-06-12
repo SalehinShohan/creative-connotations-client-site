@@ -111,7 +111,7 @@ const SignUp = () => {
                   name="name"
                   required
                   placeholder="Enter Your Email"
-                  className="w-full px-3 py-2 border rounded-md text-white"
+                  className="w-full px-3 py-2 border rounded-md "
                 />
                 {errors.name && (
                   <span className="text-red-600">Name is required</span>
@@ -126,7 +126,7 @@ const SignUp = () => {
                   {...register("photoURL", { required: true })}
                   required
                   placeholder="Photo URL"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-white"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 "
                 />
                 {errors.photoURL && (
                   <span className="text-red-600">Photo URL is required</span>
@@ -142,7 +142,7 @@ const SignUp = () => {
                   name="email"
                   required
                   placeholder="Enter Your Email Here"
-                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 text-white"
+                  className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 "
                 />
                 {errors.email && (
                   <span className="text-red-600">Email is required</span>
@@ -162,7 +162,7 @@ const SignUp = () => {
                   })}
                   required
                   placeholder="*******"
-                  className="w-full px-3 py-2 border text-white rounded-md border-gray-300 focus:outline-rose-500"
+                  className="w-full px-3 py-2 border  rounded-md border-gray-300 focus:outline-rose-500"
                 />
                 {errors.password?.type === "required" && (
                   <p className="text-red-600">Password is required</p>
@@ -196,7 +196,7 @@ const SignUp = () => {
                   })}
                   required
                   placeholder="*******"
-                  className="w-full px-3 py-2 border text-white rounded-md border-gray-300 focus:outline-rose-500"
+                  className="w-full px-3 py-2 border  rounded-md border-gray-300 focus:outline-rose-500"
                 />
                 {errors.confirmPassword?.type === "required" && (
                   <p className="text-red-600">Password is required</p>

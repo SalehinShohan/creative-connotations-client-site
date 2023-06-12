@@ -38,18 +38,34 @@ const NavBar = () => {
   const navOptions = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+        className={({ isActive }) =>
+        isActive ? "text-success" : "default"
+      }
+        to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/instructors">Instructors</NavLink>
+        <NavLink
+        className={({ isActive }) =>
+        isActive ? "text-success" : "default"
+      }
+        to="/instructors">Instructors</NavLink>
       </li>
       <li>
-        <NavLink to="/classes">Classes</NavLink>
+        <NavLink
+        className={({ isActive }) =>
+        isActive ? "text-success" : "default"
+      }
+        to="/classes">Classes</NavLink>
       </li>
       <li>
-        <Link to="/dashboard">
-          <button className="btn btn-xs">Dashboard</button>
-        </Link>
+        <NavLink 
+        className={({ isActive }) =>
+        isActive ? "text-success" : "default"
+      }
+        to="/dashboard">
+          Dashboard
+        </NavLink>
       </li>
 
       {user ? (
@@ -70,7 +86,11 @@ const NavBar = () => {
       ) : (
         <>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+              isActive ? "text-success" : "default"
+            }
+            to="/login">Login</NavLink>
           </li>{" "}
         </>
       )}
@@ -96,7 +116,7 @@ const NavBar = () => {
 
   return (
     <Container>
-      <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-2xl h-10 bg-black shadow-lg text-white">
+      <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-2xl h-10 bg-black shadow-lg ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

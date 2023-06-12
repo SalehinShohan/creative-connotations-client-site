@@ -37,7 +37,7 @@ const MyClass = () => {
 
   return (
     <div className="w-10/12">
-      <div className="font-semibold text-2xl text-white flex justify-evenly mb-10">
+      <div className="font-semibold text-2xl  flex justify-evenly mb-10">
         <h2>Total Classes: {cart.length}</h2>
         <h2>Total Price: {total} BDT</h2>
         {/* <Link to="/dashboard/pay">
@@ -49,7 +49,7 @@ const MyClass = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="text-white">
+            <tr className="">
               <th>#</th>
               <th>Course</th>
               <th>Course Name</th>
@@ -75,7 +75,7 @@ const MyClass = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(row)}
-                    className="btn btn-ghost btn-sm text-white bg-red-500">
+                    className="btn btn-ghost btn-sm  bg-red-500">
                     <AiFillDelete></AiFillDelete>
                   </button>
                 </td>
