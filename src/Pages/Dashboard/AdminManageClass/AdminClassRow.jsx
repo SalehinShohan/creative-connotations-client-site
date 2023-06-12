@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
 import useCart from "../../../Hooks/useCart";
 
 const AdminClassRow = ({ cls, index }) => {
@@ -32,6 +33,20 @@ const AdminClassRow = ({ cls, index }) => {
       });
   };
 
+  const handleFeedback = (id) => {
+    fetch(`http://localhost:5000/feedback/${id}`, {
+      method: "PUT",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("access-token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch();
+      });
+  };
+
   return (
     <tr>
       <th>{index + 1}</th>
@@ -51,15 +66,23 @@ const AdminClassRow = ({ cls, index }) => {
         <button
           disabled={cls?.status !== "pending"}
           onClick={() => handleApprove(cls?._id)}
-          className="btn bg-red-500  btn-xs">
+          className="btn bg-red-500 text-white btn-xs">
           Approve
         </button>
         <button
           disabled={cls?.status !== "pending"}
           onClick={() => handleDeny(cls?._id)}
-          className="btn bg-red-500  btn-xs">
+          className="btn bg-red-500 text-white btn-xs">
           Deny
         </button>
+
+        <button
+          disabled={cls?.feedback || cls?.status === "pending" || cls?.status === 'approve'}
+          onClick={() => handleFeedback(cls?._id)}
+          className="btn bg-red-500 text-white btn-xs">
+          <Link to='/dashboard/feedback'>Feedback</Link>
+        </button>
+
       </td>
     </tr>
   );

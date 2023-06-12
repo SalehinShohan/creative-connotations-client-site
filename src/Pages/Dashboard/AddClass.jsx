@@ -1,12 +1,34 @@
 import { useForm } from "react-hook-form";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { useState } from "react";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 
 // console.log(img_hosting_token);
 
 const AddClass = () => {
+  //instructorImage
+//http://localhost:5000/instructorImage
+
+  const {user} = useContext(AuthContext);
+  // console.log(user)
+  const [images, setImages] = useState({});
+
+  useEffect( () => {
+    fetch(`http://localhost:5000/instructorImage?email=${user?.email}`)
+    .then(res => res.json())
+    .then(data => {
+      setImages(data.img)
+      console.log(data.img);
+    })
+  }, [user])
+
+  useTitle("Add Class");
   const [axiosSecure] = useAxiosSecure();
 
   const { register, handleSubmit, reset } = useForm();
@@ -14,6 +36,7 @@ const AddClass = () => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
   const onSubmit = (data) => {
+
     const formData = new FormData();
     formData.append("image", data.img[0]);
 
@@ -37,7 +60,9 @@ const AddClass = () => {
             price: parseFloat(price),
             email,
             status: 'pending',
-            studentsEnrolled: 0
+            studentsEnrolled: 0,
+            feedback: '',
+            instImage: images
           };
           console.log(newClass);
           axiosSecure.post("/class", newClass).then((data) => {

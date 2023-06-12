@@ -19,6 +19,7 @@ import EnrolledClass from "../Pages/Dashboard/EnrolledClass";
 import AdminMangeClass from "../Pages/Dashboard/AdminManageClass/AdminMangeClass";
 import AdminRoute from "./AdminRoute";
 import ErrorPage from "../Pages/ErrorPage";
+import Feedback from "../Pages/Dashboard/AdminManageClass/Feedback";
 
 
   export const router = createBrowserRouter([
@@ -84,6 +85,10 @@ import ErrorPage from "../Pages/ErrorPage";
         {
           path: 'enrollclass',
           element: <EnrolledClass></EnrolledClass>
+        },
+        {
+          path: 'feedback',
+          element: <Feedback></Feedback>
         }
       ]
     }

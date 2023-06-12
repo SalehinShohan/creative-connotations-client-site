@@ -20,7 +20,7 @@ const Instructors = () => {
       <div className="p-24">
         {instData.map((data) => (
           <div key={data.name}>
-            <div className="card card-side bg-base-100 shadow-xl">
+            <div className="card card-side bg-base-100 shadow-xl mb-10">
               <figure>
                 <img className="w-60 rounded-xl"
                   src={data.img}
@@ -30,9 +30,8 @@ const Instructors = () => {
               <div className="card-body">
                 <h2 className="card-title">Name: {data.name}</h2>
                 <p>{data.email}</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Watch</button>
-                </div>
+                <p>Enrolled: {data.studentsEnrolled}</p>
+                
               </div>
             </div>
           </div>

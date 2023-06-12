@@ -78,7 +78,7 @@ const AllUsers = () => {
                   ) : (
                     <button
                       onClick={() => handleAdmin(user)}
-                      className="btn btn-ghost btn-xs  bg-fuchsia-400">
+                      className="btn btn-ghost btn-xs text-white bg-fuchsia-400">
                       Make Admin
                     </button>
                   )}{" "}
@@ -90,7 +90,7 @@ const AllUsers = () => {
                   ) : (
                     <button
                       onClick={() => handleInstructor(user)}
-                      className="btn btn-ghost btn-xs  bg-orange-400">
+                      className="btn btn-ghost btn-xs text-white bg-orange-400">
                       Make Instructor
                     </button>
                   )}

@@ -85,6 +85,7 @@ const InstructorClass = () => {
               <th>Enrolled</th>
               <th>Price</th>
               <th>Status</th>
+              <th>Feedback</th>
               <th>Action</th>
               <th>Action</th>
             </tr>
@@ -107,10 +108,11 @@ const InstructorClass = () => {
                 <td>{cls.studentsEnrolled}</td>
                 <td>{cls.price} BDT</td>
                 <td>{cls.status}</td>
+                <td>{cls.feedback}</td>
                 <td>
                   <button
                     onClick={() => handleDelete(cls)}
-                    className="btn btn-ghost btn-sm  bg-red-500">
+                    className="btn btn-ghost btn-sm text-white bg-red-500">
                     <AiFillDelete></AiFillDelete>
                   </button>
                 </td>

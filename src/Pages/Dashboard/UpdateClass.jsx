@@ -3,9 +3,6 @@ import { useForm } from "react-hook-form";
 
 const UpdateClass = (props) => {
   const { handleClassUpdate } = props;
-  console.log(props.cls.price);
-  console.log(props.cls._id);
-
   const {
     register,
     handleSubmit,
@@ -13,7 +10,7 @@ const UpdateClass = (props) => {
   } = useForm();
   return (
     <div>
-      <label htmlFor={`my-modal-${props?.cls._id}`} className="btn btn-sm btn-info">
+      <label htmlFor={`my-modal-${props?.cls._id}`} className="btn btn-sm btn-outline btn-info">
         Edit
       </label>
       <input type="checkbox" id={`my-modal-${props?.cls._id}`} className="modal-toggle" />
@@ -28,7 +25,7 @@ const UpdateClass = (props) => {
             <div>
               <h1 className="text-start text-3xl text-accent mb-2 lg:ml-40">Price:</h1>
               <input
-                className="w-1/2 h-14 rounded-xl p-2 mb-4 input-accent"
+                className="w-1/2 h-14 rounded-xl border p-2 mb-4 input-accent"
                 {...register("price")}
                 placeholder="Price"
                 type="number"
@@ -45,7 +42,7 @@ const UpdateClass = (props) => {
             <div>
               <h1 className="text-start text-3xl text-accent mb-2 lg:ml-40">Available Quantity:</h1>
               <input
-                className="w-1/2 h-14 rounded-xl p-2 mb-4 input-accent"
+                className="w-1/2 h-14 rounded-xl border p-2 mb-4 input-accent"
                 {...register("spotsAvailable")}
                 placeholder="Available quantity"
                 type="number"
@@ -55,15 +52,15 @@ const UpdateClass = (props) => {
             
 
             <div className="w-full mt-4">
-              <button className="btn btn-outline btn-success">
+              <button className="btn btn-sm btn-outline btn-success">
                 Update
               </button>
             </div>
           </form>
 
           <div className="modal-action">
-            <label htmlFor={`my-modal-${props?.cls._id}`} className="btn">
-              Exit!
+            <label htmlFor={`my-modal-${props?.cls._id}`} className="btn btn-sm">
+              Exit
             </label>
           </div>
         </div>
