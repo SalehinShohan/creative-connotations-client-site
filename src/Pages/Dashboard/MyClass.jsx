@@ -5,7 +5,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const MyClass = () => {
-  useTitle("My Classes");
+  useTitle("My Selected Classes");
   const [cart, refetch] = useCart();
 
   const total = cart.reduce((sum, item) => parseFloat(item.price) + sum, 0);

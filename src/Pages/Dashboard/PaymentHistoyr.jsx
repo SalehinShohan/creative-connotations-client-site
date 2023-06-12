@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useTitle from "../../Hooks/useTitle";
 
 const PaymentHistoyr = () => {
+  useTitle("Payment History")
   const [axiosSecure] = useAxiosSecure();
 
   const { data: users = [] } = useQuery(["payments"], async () => {

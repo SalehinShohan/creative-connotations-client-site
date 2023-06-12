@@ -2,9 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { AiFillDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 import UpdateClass from "./UpdateClass";
+import useTitle from "../../Hooks/useTitle";
 
 const InstructorClass = () => {
-
+  useTitle("My Class")
   const {refetch, data: classes = [] } = useQuery({
     queryKey: ["class"],
     queryFn: async () => {

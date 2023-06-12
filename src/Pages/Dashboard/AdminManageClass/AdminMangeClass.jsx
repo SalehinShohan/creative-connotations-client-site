@@ -1,8 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import AdminClassRow from "./AdminClassRow";
+import useTitle from "../../../Hooks/useTitle";
 
 
 const AdminMangeClass = () => {
+
+  useTitle("Manage Class")
 
   const { data: classes = []} = useQuery({
     queryKey: ["class"],

@@ -22,9 +22,10 @@ const PopularClasses = () => {
   return (
     <Container>
       <div>
-        <h2 className="text-3xl text-center font-serif font-bold mt-24">
+        <h2 className="text-3xl text-center font-serif font-bold mt-24 mb-5">
           Our Popular Classes
         </h2>
+        <p className="text-center font-serif">Unlock Your Potential with Popular Classes!</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 mt-10 mb-20">

@@ -15,9 +15,10 @@ const PopularInstructors = () => {
 
   return (
     <Container>
-      <h2 className="text-center text-4xl font-semibold my-10">
+      <h2 className="text-center text-3xl font-bold font-serif mb-5">
         Our Popular Instructors
       </h2>
+      <p className="text-center font-serif">Unlock Your Potential with the Guidance of Esteemed Instructors</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 rounded-xl">
         {instructors.map((instructor) => (

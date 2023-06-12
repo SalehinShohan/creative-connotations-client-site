@@ -23,7 +23,8 @@ const Activites = () => {
 
   return (
     <Container>
-      <h2 className="text-center text-3xl font-serif font-bold p-20">Our Activity</h2>
+      <h2 className="text-center text-3xl font-serif font-bold mt-20 mb-5">Our Activity</h2>
+      <p className="text-center font-serif mb-20">Experience the Thrill, Discover the Adventure</p>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}

@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useTitle from "../../Hooks/useTitle";
 
 
 const EnrolledClass = () => {
+  useTitle("My Enroll Classes")
     const[axiosSecure] = useAxiosSecure();
 
   const { data: users = [], } = useQuery(["payments"], async () => {
