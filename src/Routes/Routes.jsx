@@ -18,12 +18,14 @@ import PaymentHistoyr from "../Pages/Dashboard/PaymentHistoyr";
 import EnrolledClass from "../Pages/Dashboard/EnrolledClass";
 import AdminMangeClass from "../Pages/Dashboard/AdminManageClass/AdminMangeClass";
 import AdminRoute from "./AdminRoute";
+import ErrorPage from "../Pages/ErrorPage";
 
 
   export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
