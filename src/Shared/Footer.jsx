@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="footer p-10 bg-neutral text-neutral-content shadow-2xl mt-24">
         <div>
           <img className="w-12" src={logo} alt="" />
-            <p className=" text-2xl font-semibold">Creative Connotations</p>
+            <p className="text-white text-2xl font-semibold">Creative Connotations</p>
           <p>
             Providing reliable tech since 2023.
           </p>

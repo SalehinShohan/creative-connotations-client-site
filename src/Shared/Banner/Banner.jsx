@@ -12,7 +12,7 @@ const Banner = () => {
         <div id="slide1" className="carousel-item relative w-full">
           <img src={logo1} className="w-full rounded-xl" />
           <div className="absolute h-full flex items-center rounded-xl left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className=" space-y-7 pl-12 w-1/3">
+            <div className="text-white space-y-7 pl-12 w-1/3">
               <h1 className="text-5xl font-bold mt-16">
                 Unlock the World, One Language at a Time
               </h1>
@@ -39,7 +39,7 @@ const Banner = () => {
         <div id="slide2" className="carousel-item relative w-full">
           <img src={logo2} className="w-full rounded-xl" />
           <div className="absolute h-full flex items-center rounded-xl left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className=" space-y-7 pl-12 w-1/3">
+            <div className="text-white space-y-7 pl-12 w-1/3">
               <h1 className="text-5xl font-bold mt-16">
                 Unlock the World, One Language at a Time
               </h1>
@@ -66,7 +66,7 @@ const Banner = () => {
         <div id="slide3" className="carousel-item relative w-full">
           <img src={logo3} className="w-full rounded-xl" />
           <div className="absolute h-full flex items-center rounded-xl left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className=" space-y-7 pl-12 w-1/3">
+            <div className="text-white space-y-7 pl-12 w-1/3">
               <h1 className="text-5xl font-bold mt-16">
                 Unlock the World, One Language at a Time
               </h1>
@@ -92,7 +92,7 @@ const Banner = () => {
         <div id="slide4" className="carousel-item relative w-full">
           <img src={logo4} className="w-full rounded-xl" />
           <div className="absolute h-full flex items-center rounded-xl left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-            <div className=" space-y-7 pl-12 w-1/3">
+            <div className="text-white space-y-7 pl-12 w-1/3">
               <h1 className="text-5xl font-bold mt-16">
                 Unlock the World, One Language at a Time
               </h1>
