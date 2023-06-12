@@ -22,7 +22,8 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-    signIn(email, password).then((result) => {
+    signIn(email, password)
+    .then((result) => {
       const user = result.user;
       console.log(user);
       Swal.fire({
@@ -35,7 +36,16 @@ const Login = () => {
         },
       });
       navigate(from, { replace: true });
+    })
+    .catch((error) => {
+      console.log(error.message);
+      Swal.fire({
+        icon: "error",
+        text: "Please valid email and password",
+        confirmButtonText: "OK",
+      });
     });
+
   };
 
 

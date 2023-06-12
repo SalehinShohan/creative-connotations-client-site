@@ -24,3 +24,6 @@ https://github.com/programming-hero-web-course1/b712-summer-camp-client-side-Sal
 
 Admin Email: cold@gmail.com
 Admin Pass: Shohan1234@
+
+Instructor Email : milon@gmail.com
+Instructor Pass: Shohan1234@
