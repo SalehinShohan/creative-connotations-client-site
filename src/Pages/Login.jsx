@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import {FaGoogle  } from 'react-icons/fa';
+import {AiFillEye  } from 'react-icons/ai';
 import toast from 'react-hot-toast'
 import Container from "../components/Container";
 import useTitle from "../Hooks/useTitle";
@@ -10,6 +11,8 @@ import useTitle from "../Hooks/useTitle";
 
 const Login = () => {
   useTitle("Login")
+
+  const [show, setShow] = useState(false);
   const { signIn, googleSignIn, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -107,12 +110,17 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={show ? 'text' : "password"  }
                   name="password"
                   required
                 placeholder='*******'
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500'
                 />
+
+                <p onClick={() => setShow(!show)}> 
+                    <h2><AiFillEye className="w-6 h-6" ></AiFillEye></h2>
+                   </p>
+
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
