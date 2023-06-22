@@ -40,9 +40,6 @@ const MyClass = () => {
       <div className="font-semibold text-2xl text-white flex justify-evenly mb-10">
         <h2>Total Classes: {cart.length}</h2>
         <h2>Total Price: {total} BDT</h2>
-        {/* <Link to="/dashboard/pay">
-          <button className="btn btn-sm btn-success">PAY</button>
-        </Link> */}
       </div>
 
       <div className="overflow-x-auto">
